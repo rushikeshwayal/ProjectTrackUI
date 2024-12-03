@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import MinistryLogos from '../../Common/MinistryLogos'; // Replace this if necessary
-import SideNavBar from '../../Admin/Home/SideNavBarAdmin'; // Replace this with your sidebar component
+import SideNavBarInvestigator from '../Home/SideNavBarInvestigator'; // Replace this with your sidebar component
 import AllMessages from './AllMessages';
 import SendMessage from './SendMessage';
 import ReceivedMessages from './ReceivedMessages';
@@ -22,7 +22,7 @@ const  ChatSystemInvestigator = () => {
 
       {/* Sidebar - left side */}
       <div className={`mt-[100px] transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <SideNavBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+        <SideNavBarInvestigator isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       </div>
 
       {/* Main content area */}
