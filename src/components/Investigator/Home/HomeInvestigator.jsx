@@ -6,7 +6,6 @@ import AssignedProjectInvestigator from "./AssignProjectInvestigator";
 
 function Home2() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar open/close state
-
   return (
     <div className="relative min-h-screen flex overflow-hidden">
       {/* Ministry Logos - top section */}

@@ -7,7 +7,8 @@ import OrganizationDetailsSection from './OrganizationDetailsSection';
 import InvestigatorDetailsSection from './InvestigatorDetailsSection';
 import SubInvestigatorDetailsSection from './SubInvestigatorDetailsSection';
 import ProjectCoordinatorDetailsSection from './ProjectCoordinatorDetailsSection';
-
+import AddProjectFund from './AddProjectFundSection';
+import GetReport from './GetReport';
 const ProjectDetails = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
   const [activeTab, setActiveTab] = useState('ProjectDetails'); 
@@ -67,12 +68,21 @@ const ProjectDetails = () => {
                 Sub Investigator Details
               </button>
             </li>
+            
             <li className="mr-2">
               <button
                 onClick={() => handleTabClick('CoordinatorDetails')}
                 className={`inline-block p-4 rounded-t-lg ${activeTab === 'CoordinatorDetails' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
               >
                 Coordinator Details
+              </button>
+            </li>
+            <li className="mr-2">
+              <button
+                onClick={() => handleTabClick('Fund')}
+                className={`inline-block p-4 rounded-t-lg ${activeTab === 'Fund' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
+              >
+                Fund
               </button>
             </li>
             <li className="mr-2">
@@ -100,7 +110,8 @@ const ProjectDetails = () => {
           {activeTab === 'SubInvestigatorDetails' && <SubInvestigatorDetailsSection/>}
           {activeTab === 'CoordinatorDetails' && <ProjectCoordinatorDetailsSection />}
           {activeTab === 'Statistics' && <h1>Statistics</h1> }
-          {activeTab === 'AuditReport' && <h1>Audit Report</h1> }
+          {activeTab === 'AuditReport' && <GetReport/> }
+          {activeTab === 'Fund' && <AddProjectFund/> }
         </div>
       </div>
     </div>

@@ -14,6 +14,9 @@ import HomeInvestigator from './components/Investigator/Home/HomeInvestigator';
 import InvestigatorProfile from './components/Investigator/Home/InvestigatorProfile'
 import  ProjectDetailsInvestigaor from './components/Investigator/ProjectDetails/ProjectDetails';
 import ChatSystemInvestigator from './components/Investigator/Message/ChatSystem';
+import InvestigatorNotification from './components/Investigator/Home/InvestigatorNotification';
+import AdminNotification from './components/Admin/Home/AdminNotification';
+import Dashboard from './components/Investigator/DashBoard/Dashboard';
 function ProtectedRoute({ children, allowedRole }) {
   const { user } = useAuth();
 
@@ -104,6 +107,15 @@ function AppRoutes() {
           </ProtectedRoute>
         } 
       />
+
+<Route
+        path="/admin/notification"
+        element={
+          <ProtectedRoute allowedRole="Admin Head">
+            <AdminNotification />
+          </ProtectedRoute>
+        }
+      />
 {/* ========================================================================= */}
       {/* Investigator Routes (protected) */}
       <Route 
@@ -150,6 +162,23 @@ function AppRoutes() {
         } 
       />
 
+<Route
+        path="/investigator/notification"
+        element={
+          <ProtectedRoute allowedRole="Investigator">
+            <InvestigatorNotification />
+          </ProtectedRoute>
+        }
+      />
+
+<Route
+        path="/investigator/dashboard"
+        element={
+          <ProtectedRoute allowedRole="Investigator">
+            <Dashboard/>
+          </ProtectedRoute>
+        }
+      />
 
 
 

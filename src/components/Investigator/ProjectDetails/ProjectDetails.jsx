@@ -7,7 +7,9 @@ import OrganizationDetailsSection from './OrganizationDetailsSection';
 import InvestigatorDetailsSection from './InvestigatorDetailsSection';
 import SubInvestigatorDetailsSection from './SubInvestigatorDetailsSection';
 import ProjectCoordinatorDetailsSection from './ProjectCoordinatorDetailsSection';
-
+import FundReport from './GetFundSection';
+import Report from './Report';
+import UpdateReport from './UpdateReport';
 const ProjectDetails = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
   const [activeTab, setActiveTab] = useState('ProjectDetails'); 
@@ -75,14 +77,16 @@ const ProjectDetails = () => {
                 Coordinator Details
               </button>
             </li>
+
             <li className="mr-2">
               <button
-                onClick={() => handleTabClick('Statistics')}
-                className={`inline-block p-4 rounded-t-lg ${activeTab === 'Statistics' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
+                onClick={() => handleTabClick('Fund')}
+                className={`inline-block p-4 rounded-t-lg ${activeTab === 'Fund' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
               >
-                Statistics
+                Fund Details
               </button>
             </li>
+            
             <li className="mr-2">
               <button
                 onClick={() => handleTabClick('AuditReport')}
@@ -99,8 +103,9 @@ const ProjectDetails = () => {
           {activeTab === 'InvestigatorDetails' && <InvestigatorDetailsSection />}
           {activeTab === 'SubInvestigatorDetails' && <SubInvestigatorDetailsSection/>}
           {activeTab === 'CoordinatorDetails' && <ProjectCoordinatorDetailsSection />}
+          {activeTab === 'Fund' && <FundReport />}
           {activeTab === 'Statistics' && <h1>Statistics</h1> }
-          {activeTab === 'AuditReport' && <h1>Audit Report</h1> }
+          {activeTab === 'AuditReport' && <Report/> }
         </div>
       </div>
     </div>

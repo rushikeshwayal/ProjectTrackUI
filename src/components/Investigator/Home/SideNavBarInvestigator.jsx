@@ -1,4 +1,3 @@
-
 export default function SideNavBarInvestigator({ isSidebarOpen, setIsSidebarOpen }) {
     return (
       <div className="fixed  h-screen top-10 flex">
@@ -9,6 +8,14 @@ export default function SideNavBarInvestigator({ isSidebarOpen, setIsSidebarOpen
           <div className="flex flex-col h-full p-4">
             {/* Navigation Links */}
             <ul className="flex flex-col space-y-2 mt-20">
+            <li className="group">
+                <a
+                  href="/investigator/dashboard"
+                  className="flex items-center px-4 py-2 text-gray-700 rounded-lg transition duration-300 transform hover:bg-purple-500 hover:text-white hover:scale-105 group-hover:shadow-lg"
+                >
+                  Dashboard
+                </a>
+              </li>
               <li className="group">
                 <a
                   href="/investigator"
