@@ -63,7 +63,13 @@ const InvestigatorNotification = () => {
       <div className="div">
         <MinistryLogos />
       </div>
-      <div className="flex justify-between items-center mb-5">
+      <a
+        href="/investigator"
+        className="fixed top-40 left-8 z-50 px-4 py-2  text-purple-600 rounded-md font-bold text-xl "
+      >
+        ◁ Home
+      </a>
+      <div className="flex justify-between items-center mb-5 mt-20">
         <h2 className="text-2xl font-semibold">Recent Notifications</h2>
         <button
           onClick={dismissAllNotifications}

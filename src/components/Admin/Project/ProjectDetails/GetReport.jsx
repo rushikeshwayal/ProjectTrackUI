@@ -44,7 +44,7 @@ const GetReport = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-12 p-8 bg-gray-50 shadow-lg rounded-lg border border-gray-200">
+    <div className=" p-8  ">
       {loading && (
         <p className="text-blue-500 text-lg text-center font-medium animate-pulse">
           Loading report...
@@ -59,7 +59,7 @@ const GetReport = () => {
 
       {entries.length > 0 ? (
         entries.map((entry) => (
-          <div key={entry.id} className="bg-white rounded-lg shadow-md p-6 space-y-3 mb-6">
+          <div key={entry.id} className="bg-white rounded-lg shadow-md p-6 w-[900px] space-y-3 mb-6">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-bold text-gray-800">Project ID</h2>
               <p className="text-indigo-700 font-medium text-xl">{entry.project_id}</p>

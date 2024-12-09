@@ -1,0 +1,43 @@
+.project-state-container {
+  font-family: Arial, sans-serif;
+}
+
+.sliding-navbar {
+  display: flex;
+  justify-content: space-around;
+  background: #333;
+  padding: 10px 0;
+}
+
+.nav-btn {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #555;
+}
+
+.view-container {
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.card {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+}

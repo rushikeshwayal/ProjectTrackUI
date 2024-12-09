@@ -16,7 +16,11 @@ import  ProjectDetailsInvestigaor from './components/Investigator/ProjectDetails
 import ChatSystemInvestigator from './components/Investigator/Message/ChatSystem';
 import InvestigatorNotification from './components/Investigator/Home/InvestigatorNotification';
 import AdminNotification from './components/Admin/Home/AdminNotification';
-import Dashboard from './components/Investigator/DashBoard/Dashboard';
+import Dashboard from './components/Investigator/Dashboard/NumberOfProject';
+import ProjectState from './components/Investigator/Dashboard/test/HomePage';
+import SubjectiveForm from './components/Investigator/SubjectiveForm/Subjectiveform';
+import FormSteps from "./components/Investigator/SubjectiveForm/FormSteps"
+import NumberOfProject from './components/Admin/Dashboard/NumberOfProject';
 function ProtectedRoute({ children, allowedRole }) {
   const { user } = useAuth();
 
@@ -116,6 +120,14 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+      <Route
+        path="/admin/dashboard"
+        element={
+          <ProtectedRoute allowedRole="Admin Head">
+            <NumberOfProject />
+          </ProtectedRoute>
+        }
+      />
 {/* ========================================================================= */}
       {/* Investigator Routes (protected) */}
       <Route 
@@ -180,6 +192,23 @@ function AppRoutes() {
         }
       />
 
+<Route
+        path="/investigator/project/statistics"
+        element={
+          <ProtectedRoute allowedRole="Investigator">
+            <ProjectState/>
+          </ProtectedRoute>
+        }
+      />
+
+<Route
+        path="/investigator/project/subjective-forms"
+        element={
+          <ProtectedRoute allowedRole="Investigator">
+            <FormSteps/>
+          </ProtectedRoute>
+        }
+      />
 
 
 

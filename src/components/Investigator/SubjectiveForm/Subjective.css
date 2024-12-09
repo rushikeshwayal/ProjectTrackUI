@@ -1,0 +1,22 @@
+/* General Nav Styling */
+.relative {
+  position: relative;
+}
+
+.flex div:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Active Tabs Animation with Transition */
+.bg-blue-500 .hover:scale-110 {
+  transition: transform 0.3s ease;
+}
+
+/* Bottom Bar Animation Effect */
+.absolute {
+  height: 2px;
+  transition: transform 0.3s ease;
+  width: 25%;
+  background-color: white;
+}

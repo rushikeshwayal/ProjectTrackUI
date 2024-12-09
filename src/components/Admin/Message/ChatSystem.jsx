@@ -50,7 +50,7 @@ const ChatSystem = () => {
                 onClick={() => handleTabClick('SentMessages')}
                 className={`inline-block p-4 rounded-t-lg ${activeTab === 'SentMessages' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
               >
-                Sent Messages
+                Send Messages
               </button>
             </li>
             <li className="mr-2">

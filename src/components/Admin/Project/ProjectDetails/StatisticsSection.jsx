@@ -6,11 +6,11 @@ ChartJS.register(LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, Ca
 
 const StatisticsSection = ({ statistics }) => {
   // Assuming statistics is structured as follows:
-  // statistics = {
-  //   funding: { labels: ['Phase 1', 'Phase 2'], data: [500000, 300000] },
-  //   status: { ongoing: 60, completed: 30, pending: 10 },
-  //   resources: { labels: ['Phase 1', 'Phase 2'], data: [5, 10] },
-  // };
+  statistics = {
+    funding: { labels: ['Phase 1', 'Phase 2'], data: [500000, 300000] },
+    status: { ongoing: 60, completed: 30, pending: 10 },
+    resources: { labels: ['Phase 1', 'Phase 2'], data: [5, 10] },
+  };
 
   const fundingData = {
     labels: statistics.funding.labels,

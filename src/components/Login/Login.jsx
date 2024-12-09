@@ -52,7 +52,7 @@ function Login() {
       );
 
       if (user) {
-        console.log(`Navigating to: ${role === 'Admin Console' ? '/admin' : '/investigator'}`);
+        console.log(`Navigating to: ${role === 'Admin Console' ? '/admin' : '/investigator/dashboard'}`);
         navigate('/admin');
         const updatedUser = {
           ...user,
@@ -68,7 +68,7 @@ function Login() {
           UniqeID: updatedUser.UniqeID,
           ID: updatedUser.ID
         });
-        navigate(role === 'Admin Console' ? '/admin' : '/investigator');
+        navigate(role === 'Admin Console' ? '/admin' : '/investigator/dashboard');
       } else {
         setError('Invalid credentials or role.');
       }

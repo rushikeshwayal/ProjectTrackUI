@@ -10,6 +10,7 @@ import ProjectCoordinatorDetailsSection from './ProjectCoordinatorDetailsSection
 import FundReport from './GetFundSection';
 import Report from './Report';
 import UpdateReport from './UpdateReport';
+import Utili from './Utilization';
 const ProjectDetails = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
   const [activeTab, setActiveTab] = useState('ProjectDetails'); 
@@ -83,7 +84,7 @@ const ProjectDetails = () => {
                 onClick={() => handleTabClick('Fund')}
                 className={`inline-block p-4 rounded-t-lg ${activeTab === 'Fund' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
               >
-                Fund Details
+                Fund Released Details
               </button>
             </li>
             
@@ -95,6 +96,16 @@ const ProjectDetails = () => {
                 Report
               </button>
             </li>
+
+            <li className="mr-2">
+              <button
+                onClick={() => handleTabClick('FundUtileze')}
+                className={`inline-block p-4 rounded-t-lg ${activeTab === 'FundUtileze' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
+              >
+                Fund Utilisation Report
+              </button>
+            </li>
+            
           </ul>
 
           {/* Render respective sections based on active tab */}
@@ -106,6 +117,7 @@ const ProjectDetails = () => {
           {activeTab === 'Fund' && <FundReport />}
           {activeTab === 'Statistics' && <h1>Statistics</h1> }
           {activeTab === 'AuditReport' && <Report/> }
+          {activeTab === 'FundUtileze' && <Utili/> }
         </div>
       </div>
     </div>

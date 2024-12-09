@@ -9,6 +9,8 @@ import SubInvestigatorDetailsSection from './SubInvestigatorDetailsSection';
 import ProjectCoordinatorDetailsSection from './ProjectCoordinatorDetailsSection';
 import AddProjectFund from './AddProjectFundSection';
 import GetReport from './GetReport';
+import RRport from './RRport';
+import StatisticsSection from './StatisticsSection';
 const ProjectDetails = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
   const [activeTab, setActiveTab] = useState('ProjectDetails'); 
@@ -109,8 +111,8 @@ const ProjectDetails = () => {
           {activeTab === 'InvestigatorDetails' && <InvestigatorDetailsSection />}
           {activeTab === 'SubInvestigatorDetails' && <SubInvestigatorDetailsSection/>}
           {activeTab === 'CoordinatorDetails' && <ProjectCoordinatorDetailsSection />}
-          {activeTab === 'Statistics' && <h1>Statistics</h1> }
-          {activeTab === 'AuditReport' && <GetReport/> }
+          {activeTab === 'Statistics' && <StatisticsSection />}
+          {activeTab === 'AuditReport' && <RRport/> }
           {activeTab === 'Fund' && <AddProjectFund/> }
         </div>
       </div>
