@@ -14,6 +14,7 @@ function HomeAdmin() {
   };
 
   return (
+    <div>
     <div className="relative min-h-screen flex overflow-hidden">
       {/* Ministry Logos - top section */}
       <div className="fixed top-0 left-0 right-0 z-40">
@@ -59,6 +60,7 @@ function HomeAdmin() {
           {activeTab === 'st' && <STProjects />}
         </div>
       </div>
+    </div>
     </div>
   );
 }

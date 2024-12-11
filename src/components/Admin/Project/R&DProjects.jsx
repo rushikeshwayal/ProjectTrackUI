@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Plus } from 'lucide-react'
 
 const RDProjects = () => {
   const [rdProjects, setRdProjects] = useState([]);
@@ -41,6 +42,7 @@ const RDProjects = () => {
   };
 
   return (
+    <div>
     <div className="p-6">
       <h2 className="text-xl font-bold mb-4">R&D Projects Overview</h2>
       <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
@@ -81,7 +83,18 @@ const RDProjects = () => {
           )}
         </tbody>
       </table>
-    </div>
+    </div>    
+    <Link
+      to="/create/project"
+      className="group relative left-[980px] inline-flex items-center justify-center p-0.5 overflow-hidden rounded-full shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+      aria-label="Create new project"
+    >
+      <span className="relative inline-flex items-center justify-center w-14 h-14 text-white text-3xl font-medium transition-all duration-300 ease-in-out bg-gradient-to-br from-gray-700 to-purple-600 rounded-full group-hover:from-gray-800 group-hover:to-purple-700">
+        <Plus className="w-8 h-8" />
+        <span className="sr-only">Create new project</span>
+      </span>
+    </Link>
+</div>
   );
 };
 

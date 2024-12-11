@@ -293,7 +293,7 @@ const AdminProfile = () => {
             {/* Action Buttons */}
             <div className='flex justify-between space-x-5 mt-16'>
             <div>
-              <Link to="/">
+              <Link to="/login">
               <button
                 type="button"
                  className="px-6 py-2 bg-red-700 text-white rounded-lg"

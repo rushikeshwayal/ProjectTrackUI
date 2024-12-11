@@ -21,12 +21,14 @@ import ProjectState from './components/Investigator/Dashboard/test/HomePage';
 import SubjectiveForm from './components/Investigator/SubjectiveForm/Subjectiveform';
 import FormSteps from "./components/Investigator/SubjectiveForm/FormSteps"
 import NumberOfProject from './components/Admin/Dashboard/NumberOfProject';
+import AdminRegistration from './components/Common/AdminRegistration';
+import HomeLanding from './components/Landing/Home';
 function ProtectedRoute({ children, allowedRole }) {
   const { user } = useAuth();
 
   // If user is not logged in or doesn't have the required role, redirect to login
   if (!user || user.role !== allowedRole) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   return <>{children}</>;
@@ -36,7 +38,9 @@ function AppRoutes() {
   return (
     <Routes>
       {/* Login route */}
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<HomeLanding />} />
+      <Route path="/admin/register" element={<AdminRegistration />} />
 
       {/* Admin Routes (protected) */}
       <Route 
