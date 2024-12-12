@@ -39,10 +39,9 @@ function AdminRegistration() {
     setIsLoading(true);
 
     try {
-      // Include is_verified as false in the payload
       const response = await axios.post(
         "http://127.0.0.1:5000/api/post/admin",
-        { ...formData, is_verified: false }, // Add is_verified with default value
+        formData,
         {
           headers: {
             "Content-Type": "application/json",
@@ -76,7 +75,7 @@ function AdminRegistration() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <div className="w-full max-w-2xl bg-white p-6 rounded-lg shadow-lg">
+      <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold text-center mb-6 text-purple-800">
           Admin Registration
         </h1>
@@ -167,6 +166,46 @@ function AdminRegistration() {
             />
           </div>
           <div>
+            <label className="block text-gray-700 font-medium">Account Number</label>
+            <input
+              type="text"
+              name="account_number"
+              value={formData.account_number}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-medium">Security Clearance</label>
+            <input
+              type="text"
+              name="security_clearance"
+              value={formData.security_clearance}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-medium">Highest Qualification</label>
+            <input
+              type="text"
+              name="highest_qualification"
+              value={formData.highest_qualification}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-medium">Designation</label>
+            <input
+              type="text"
+              name="designation"
+              value={formData.designation}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+          <div>
             <label className="block text-gray-700 font-medium">Authority</label>
             <select
               name="authority"
@@ -176,11 +215,30 @@ function AdminRegistration() {
               required
             >
               <option value="">Select Authority</option>
-              <option value="Admin">Admin</option>
+              <option value="Admin">Admin Head</option>
               <option value="Supervisor">Supervisor</option>
             </select>
           </div>
-          {/* Other fields */}
+          <div>
+            <label className="block text-gray-700 font-medium">Identification</label>
+            <input
+              type="text"
+              name="identification"
+              value={formData.identification}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-medium">Department</label>
+            <input
+              type="text"
+              name="department"
+              value={formData.department}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
           <button
             type="submit"
             className="w-full bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700"

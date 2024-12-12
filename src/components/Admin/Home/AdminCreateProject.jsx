@@ -3,7 +3,8 @@ import axios from 'axios';
 import MinistryLogos from '../../Common/MinistryLogos'; // Ministry Logos component
 import SideNavBarAdmin from './SideNavBarAdmin'; // Sidebar component
 import { Link } from 'react-router-dom';
-
+import AdminExpenditure from './AdminExpenditure';
+import NavBar from './NavBar';
 function AdminCreateProject() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar toggle
   
@@ -101,14 +102,17 @@ function AdminCreateProject() {
   };
 
   return (
-    <div className="relative min-h-screen flex">
+
+    <div className="relative min-h-screen w-full flex flex-wrap">
       {/* Ministry Logos */}
       <div className="fixed top-0 left-0 right-0 z-40">
         <MinistryLogos />
       </div>
-
+      <div>
+      <NavBar/>
+      </div>
       {/* Sidebar */}
-      <div className={`mt-[100px] rounded-md transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={` sticky mt-[100px] rounded-md transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <SideNavBarAdmin isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       </div>
 
@@ -333,9 +337,6 @@ function AdminCreateProject() {
     Maximum 500 characters.
   </p>
 </div>
-
-         
-
           {/* Submit Button */}
           <button
             type="submit"
@@ -388,12 +389,16 @@ function AdminCreateProject() {
 
         
         </form>
+        <div className='mt-20'>
+        <AdminExpenditure />
+      </div>
       </div>
       {/* <style>
         .placeholder-uppercase::placeholder {
           text-transform:uppercase;
         }
       </style> */}
+      
     </div>
   );
 }

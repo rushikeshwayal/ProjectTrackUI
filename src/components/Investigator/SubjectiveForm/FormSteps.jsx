@@ -3,7 +3,8 @@ import { useState } from 'react';
 import MinistryLogos from '../../Common/MinistryLogos';
 import SideNavBarAdmin from '../Home/SideNavBarInvestigator';
 import SubjectiveForm from './Subjectiveform';
-import FileUploadForm from './UploadForm';  
+import UplodeForm from './UploadFile';
+import DownloadForm from './DownloadForm';
 const FormStep = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
   const [activeTab, setActiveTab] = useState('FormStep'); 
@@ -42,6 +43,15 @@ const FormStep = () => {
             
             <li className="mr-2">
               <button
+                onClick={() => handleTabClick('DownloadForm')}
+                className={`inline-block p-4 rounded-t-lg ${activeTab === 'DownloadForm' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
+              >
+                Download Form
+              </button>
+            </li>
+            
+            <li className="mr-2">
+              <button
                 onClick={() => handleTabClick('UploadFile')}
                 className={`inline-block p-4 rounded-t-lg ${activeTab === 'UploadFile' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
               >
@@ -50,7 +60,8 @@ const FormStep = () => {
             </li>
           </ul>
           {activeTab === 'FileDetails' && <SubjectiveForm />}
-          {activeTab === 'UploadFile' && <FileUploadForm />}
+          {activeTab === 'DownloadForm' && <DownloadForm />}
+          {activeTab === 'UploadFile' && <UplodeForm/>}
         </div>
       </div>
     </div>

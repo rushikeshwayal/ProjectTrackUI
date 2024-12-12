@@ -2,17 +2,17 @@ import { NavLink } from 'react-router-dom';
 
 export default function SideNavBarAdmin({ isSidebarOpen, setIsSidebarOpen }) {
   return (
-    <div className="fixed h-screen top-10 flex">
+    <div>
       {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 transition-transform duration-300 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } h-full w-80 bg-gray-100 shadow-lg z-40`}
+        } h-full w-80 bg-gray-100 shadow-lg z-40 overflow-y-auto`}
       >
         <div className="flex flex-col h-full p-4">
           {/* Navigation Links */}
           <ul className="flex flex-col space-y-2 mt-20">
-          <li className="group">
+            <li className="group">
               <NavLink
                 to="/admin/dashboard"
                 className={({ isActive }) =>
@@ -115,7 +115,7 @@ export default function SideNavBarAdmin({ isSidebarOpen, setIsSidebarOpen }) {
         </div>
       </div>
 
-      {/* Toggle Button - Separate it from the sidebar */}
+      {/* Toggle Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className="fixed font-extrabold h-10 top-8 left-4 z-50 bg-white px-[12px] rounded-lg text-center border-[2px] border-purple-500 text-purple-500 focus:outline-none"

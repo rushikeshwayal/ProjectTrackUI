@@ -100,6 +100,18 @@ export default function SideNavBarInvestigator({ isSidebarOpen, setIsSidebarOpen
                 About Organization
               </a>
             </li>
+            <li className="group">
+              <a
+                href="/download"
+                className={`flex items-center px-4 py-2 rounded-lg transition duration-300 transform ${
+                  location.pathname === '/organization'
+                    ? 'bg-purple-500 text-white scale-105 shadow-lg'
+                    : 'text-gray-700 hover:bg-purple-500 hover:text-white hover:scale-105 group-hover:shadow-lg'
+                }`}
+              >
+                Download Form
+              </a>
+            </li>
           </ul>
         </div>
       </div>

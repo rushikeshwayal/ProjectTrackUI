@@ -13,6 +13,8 @@ import RRport from './RRport';
 import StatisticsSection from './StatisticsSection';
 import UpdateProjectStatus from './UpdateStatus';
 import Timeline from './Timeline';
+import ExpenditureTable from './ExpenditureSection';
+import NavBar from '../../Home/NavBar';
 const ProjectDetails = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
   const [activeTab, setActiveTab] = useState('ProjectDetails'); 
@@ -26,6 +28,9 @@ const ProjectDetails = () => {
     <div className="flex min-h-screen">
       <div className="fixed top-0 left-0 right-0 z-40">
         <MinistryLogos />
+      </div>
+      <div>
+      <NavBar/>
       </div>
 
       {/* Sidebar - left side */}
@@ -81,14 +86,14 @@ const ProjectDetails = () => {
                 Coordinator Details
               </button>
             </li>
-            <li className="mr-2">
+            {/* <li className="mr-2">
               <button
                 onClick={() => handleTabClick('Fund')}
                 className={`inline-block p-4 rounded-t-lg ${activeTab === 'Fund' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
               >
                 Fund
               </button>
-            </li>
+            </li> */}
             <li className="mr-2">
               <button
                 onClick={() => handleTabClick('Statistics')}
@@ -121,6 +126,14 @@ const ProjectDetails = () => {
                 Tmeline
               </button>
             </li>
+            <li className="mr-2">
+              <button
+                onClick={() => handleTabClick('expenditure')}
+                className={`inline-block p-4 rounded-t-lg ${activeTab === 'expenditure' ? 'text-purple-600 bg-white border-b-2 border-purple-600' : 'hover:text-gray-600 hover:bg-gray-200'}`}
+              >
+                Expenditure
+              </button>
+            </li>
           </ul>
 
           {/* Render respective sections based on active tab */}
@@ -131,9 +144,10 @@ const ProjectDetails = () => {
           {activeTab === 'CoordinatorDetails' && <ProjectCoordinatorDetailsSection />}
           {activeTab === 'Statistics' && <StatisticsSection />}
           {activeTab === 'AuditReport' && <RRport/> }
-          {activeTab === 'Fund' && <AddProjectFund/> }
+          {/* {activeTab === 'Fund' && <AddProjectFund/> } */}
           {activeTab === 'UpdateStatus' && <UpdateProjectStatus/>}
           {activeTab === 'Timeline' && <Timeline/>}
+          {activeTab === 'expenditure' && <ExpenditureTable/>}
         </div>
       </div>
     </div>

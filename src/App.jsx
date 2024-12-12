@@ -23,6 +23,9 @@ import FormSteps from "./components/Investigator/SubjectiveForm/FormSteps"
 import NumberOfProject from './components/Admin/Dashboard/NumberOfProject';
 import AdminRegistration from './components/Common/AdminRegistration';
 import HomeLanding from './components/Landing/Home';
+import ChatBot from './components/Common/Chatbot'
+import DynamicResourceAllocation from './components/Admin/Home/DynamicResourceAllocation';
+import DownloadForm from './components/Investigator/SubjectiveForm/DownloadForm';
 function ProtectedRoute({ children, allowedRole }) {
   const { user } = useAuth();
 
@@ -36,6 +39,7 @@ function ProtectedRoute({ children, allowedRole }) {
 
 function AppRoutes() {
   return (
+    <div>
     <Routes>
       {/* Login route */}
       <Route path="/login" element={<Login />} />
@@ -132,6 +136,18 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+
+<Route
+        path="/resource/allocation"
+        element={
+          <ProtectedRoute allowedRole="Admin Head">
+            <DynamicResourceAllocation />
+          </ProtectedRoute>
+        }
+      />
+
+
+
 {/* ========================================================================= */}
       {/* Investigator Routes (protected) */}
       <Route 
@@ -214,14 +230,24 @@ function AppRoutes() {
         }
       />
 
+<Route
+        path="/download"  
+        element={
+          <ProtectedRoute allowedRole="Investigator">
+            <DownloadForm/>
+          </ProtectedRoute>
+        }
+      />
+
 
 
 
 
 
     </Routes>
+    <ChatBot/>
     
-
+    </div>
     
   );
 }

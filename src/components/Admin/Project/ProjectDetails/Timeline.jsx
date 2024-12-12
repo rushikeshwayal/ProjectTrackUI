@@ -47,7 +47,7 @@ const GanttChart = () => {
       projectSpecificData.forEach((item, index) => {
         const startDate = new Date(item.date_of_updation);
         const endDate = new Date(startDate);
-        endDate.setDate(startDate.getDate() + 7); // Assuming 7 days duration for each task
+        endDate.setMonth(startDate.getMonth() + 1); // Adding 1 month duration for each task
 
         ganttData.push([
           `Task${index + 1}`, // Task ID
@@ -68,7 +68,7 @@ const GanttChart = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 p-8">
       <h3 className="text-3xl font-bold mb-6 text-purple-700 text-center">
-        Project Gantt Chart
+        Project Gantt Chart (Monthly View)
       </h3>
 
       {error && <div className="text-center text-red-500 mb-6">{error}</div>}
@@ -83,6 +83,11 @@ const GanttChart = () => {
             options={{
               gantt: {
                 trackHeight: 30,
+                labelStyle: {
+                  fontSize: 14,
+                  color: "#000",
+                },
+                criticalPathEnabled: true, // Highlight critical path
               },
             }}
           />

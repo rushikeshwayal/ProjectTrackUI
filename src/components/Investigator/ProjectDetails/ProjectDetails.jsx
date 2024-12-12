@@ -118,6 +118,7 @@ const ProjectDetails = () => {
           {activeTab === 'Statistics' && <h1>Statistics</h1> }
           {activeTab === 'AuditReport' && <Report/> }
           {activeTab === 'FundUtileze' && <Utili/> }
+          {activeTab === 'Forms' && <Utili/> }
         </div>
       </div>
     </div>

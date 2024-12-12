@@ -1,76 +1,44 @@
 import { useState } from 'react';
-import MinistryLogos from '../../Common/MinistryLogos';
-import SideNavBarAdmin from '../Home/SideNavBarInvestigator';
-
 
 const SubjectiveForm = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [activeTab, setActiveTab] = useState('UserDetails'); // Default to the first tab
-
-  // Handles tab click and sets the state
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
+  // Sample data for the table
+  const sampleData = [
+    { srNo: 1, name: 'FORM-1', formName: 'Format for Submission of basic Project Proposal', description: 'Project proposal form for science and technology grant.', link: 'https://drive.google.com/file/d/1nR2gsAUDFmyC_SAxCR0KERK45LUvMRI0/view?usp=sharing' },
+    { srNo: 2, name: 'FORM-IA', formName: 'Endorsement from Head of the Institution / Organisation ', description: 'Institutional endorsement and project commitment letter.', link: 'https://drive.google.com/file/d/1sAdf_Ip7aq2llXctq2GuekhSo2lsvXEM/view?usp=sharing' },
+    { srNo: 3, name: 'FORM-II', formName: 'Fund Requisition', description: 'Fund requisition form for project financial details.', link: 'https://drive.google.com/file/d/1b_a_47wEp7K0ELMj4ovYs6LbpQEoGehp/view?usp=sharing' },
+    { srNo: 4, name: 'FORM-III', formName: 'Financial Expenditure Statement', description: 'Quarterly expenditure statement tracking project spending.', link: 'https://drive.google.com/file/d/1EcPYynAXVl6gon8GC06eVKxHu1SuUxz8/view?usp=sharing' },
+    { srNo: 5, name: 'FORM-IV', formName: 'Expenditure statement for Equipment', description: 'Quarterly expenditure statement tracking project spending.', link: 'https://drive.google.com/file/d/1y1pbxCH_ry9YtjWDIJLFg44EOzryLoVE/view?usp=sharing' },
+  ];
+  
 
   return (
-    <div className="flex min-h-screen">
-      {/* Top Logo Section */}
-      <div className="fixed top-0 left-0 right-0 z-40">
-        <MinistryLogos />
-      </div>
-      <div>
-        {/* Navigation */}
-        <div className="mt-4 bg-white rounded-lg shadow-lg">
-          <ul className="flex text-sm font-medium text-center text-gray-500 border-b border-gray-300">
-            {/* Tab Items */}
-            {[
-              { key: 'UserDetails', label: 'FORM-I' },
-              { key: 'Feedback', label: 'FORM-II' },
-              { key: 'SurveyDetails', label: 'FORM-III' },
-              { key: 'Analysis', label: 'FORM-IV' },
-              { key: 'Notifications', label: 'FORM-V' },
-              { key: 'Reports', label: 'FORM-VI' },
-              { key: 'FormVII', label: 'FORM-VII' },
-              { key: 'FormVIII', label: 'FORM-VIII' },
-              { key: 'FormIX', label: 'FORM-IX' },
-              { key: 'FormX', label: 'FORM-X' },
-              { key: 'FormXI', label: 'FORM-XI' },
-              { key: 'FormXII', label: 'FORM-XII' },
-              { key: 'FormXIII', label: 'FORM-XIII' },
-            ].map((item) => (
-              <li key={item.key} className="mr-2">
-                <button
-                  onClick={() => handleTabClick(item.key)}
-                  className={`inline-block p-4 rounded-t-lg ${
-                    activeTab === item.key
-                      ? 'text-purple-600 bg-white border-b-2 border-purple-600'
-                      : 'hover:text-gray-600 hover:bg-gray-200'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          {/* Render corresponding sections */}
-          <div className="p-4">
-            {activeTab === 'UserDetails' && <h1>Form Info - FORM-I_NEW</h1>}
-            {activeTab === 'Feedback' && <h1>Form Info - FORM-II_NEW</h1>}
-            {activeTab === 'SurveyDetails' && <h1>Form Info - FORM-III_NEW</h1>}
-            {activeTab === 'Analysis' && <h1>Form Info - FORM-IV_NEW</h1>}
-            {activeTab === 'Notifications' && <h1>Form Info - FORM-V_NEW</h1>}
-            {activeTab === 'Reports' && <h1>Form Info - FORM-VI_NEW</h1>}
-            {activeTab === 'FormVII' && <h1>Form Info - FORM-VII_NEW</h1>}
-            {activeTab === 'FormVIII' && <h1>Form Info - FORM-VIII_NEW</h1>}
-            {activeTab === 'FormIX' && <h1>Form Info - FORM-IX_NEW</h1>}
-            {activeTab === 'FormX' && <h1>Form Info - FORM-X_NEW</h1>}
-            {activeTab === 'FormXI' && <h1>Form Info - FORM-XI_NEW</h1>}
-            {activeTab === 'FormXII' && <h1>Form Info - FORM-XII_NEW</h1>}
-            {activeTab === 'FormXIII' && <h1>Form Info - FORM-XIII_NEW</h1>}
-          </div>
-        </div>
-      </div>
+    <div className="flex min-h-screen p-4">
+      <table className="table-auto w-full border-collapse border border-gray-300">
+        <thead>
+          <tr>
+            <th className="border border-gray-300 px-4 py-2">Sr. No</th>
+            <th className="border border-gray-300 px-4 py-2">Name</th>
+            <th className="border border-gray-300 px-4 py-2">Form Name</th>
+            <th className="border border-gray-300 px-4 py-2">Description</th>
+            <th className="border border-gray-300 px-4 py-2">View/Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sampleData.map((row, index) => (
+            <tr key={index}>
+              <td className="border border-gray-300 px-4 py-2 text-center">{row.srNo}</td>
+              <td className="border border-gray-300 px-4 py-2">{row.name}</td>
+              <td className="border border-gray-300 px-4 py-2">{row.formName}</td>
+              <td className="border border-gray-300 px-4 py-2">{row.description}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">
+                <a href={row.link} className="text-blue-500 underline">
+                  View/Download
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
